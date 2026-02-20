@@ -19,7 +19,7 @@
 ##  Overview
 **DeepSent (AI Movie Critic)** is an end-to-end web application powered by Deep Learning that analyzes text and determines its underlying emotional tone. Built with a custom **Recurrent Neural Network (RNN)** trained on the IMDB 50K movie review dataset, this app provides real-time sentiment classification (Positive/Negative) alongside a precise **Model Certainty Score**.
 
-The frontend is engineered with a modern, dark-mode "Glassmorphism" aesthetic using Streamlit, featuring custom CSS, tactile 3D elements, and state caching for lightning-fast inference.
+The frontend is designed with **Streamlit**
 
 ---
 
@@ -28,12 +28,10 @@ The frontend is engineered with a modern, dark-mode "Glassmorphism" aesthetic us
 * **Real-Time Inference:** Employs Streamlit's `@st.cache_resource` to load the heavy Keras model into memory only once, resulting in zero-lag predictions.
 * **True Certainty Metric:** Features a custom mathematical conversion that calculates exactly how confident the neural network is in its own prediction (0% to 100% scale).
 * **Bulletproof Text Processing:** Includes a robust regex cleaning pipeline, a strict 10,000-word vocabulary cap, and safe `<UNK>` token handling to prevent Out-Of-Bounds indexing errors in production.
-* **Premium UI/UX:** Designed with a striking dark-theme gradient, interactive glass-like text areas, and tactile buttons that respond to user interaction.
-
 ---
 
 ## Tech Stack
-* **Language:** Python 3
+* **Language:** Python 
 * **Deep Learning Framework:** TensorFlow / Keras (RNN)
 * **Web Framework:** Streamlit
 * **Data Processing:** NumPy, Regular Expressions (RegEx)

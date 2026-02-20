@@ -7,6 +7,7 @@ import tensorflow as tf
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.models import load_model
+from tensorflow.keras.layers import SimpleRNN
 import streamlit as st
 
 # ==========================================
@@ -75,12 +76,25 @@ st.markdown("""
 # ==========================================
 # 2. CACHING MODELS & DATA (CRITICAL FOR UX)
 # ==========================================
+
+# Create a custom wrapper to catch and remove the deprecated 'time_major' argument
+class SafeSimpleRNN(SimpleRNN):
+    def __init__(self, **kwargs):
+        kwargs.pop('time_major', None)  # Remove the problematic argument safely
+        super().__init__(**kwargs)
+
 @st.cache_resource(show_spinner="Loading AI Core...")
 def load_assets():
     """Loads model and dictionary only once to speed up the app."""
     word_idx = imdb.get_word_index()
     rev_word_idx = {value: key for key, value in word_idx.items()}
-    model = load_model('simple_rnn_imdb.h5')
+    
+    # Load the model using our custom SafeSimpleRNN to prevent crashes
+    model = load_model(
+        'simple_rnn_imdb.h5', 
+        custom_objects={'SimpleRNN': SafeSimpleRNN}
+    )
+    
     return word_idx, rev_word_idx, model
 
 # Load assets
@@ -168,5 +182,4 @@ if st.button('Analyze Sentiment 🚀'):
             )
 
 # Footer
-
 st.markdown("<div class='footer'>Designed & Developed by <b>Babar Ali</b></div>", unsafe_allow_html=True)

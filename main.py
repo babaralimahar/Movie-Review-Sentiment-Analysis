@@ -1,3 +1,7 @@
+import os
+# Force TensorFlow to use the older Keras 2 backend for compatibility
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.datasets import imdb
@@ -164,4 +168,5 @@ if st.button('Analyze Sentiment 🚀'):
             )
 
 # Footer
+
 st.markdown("<div class='footer'>Designed & Developed by <b>Babar Ali</b></div>", unsafe_allow_html=True)

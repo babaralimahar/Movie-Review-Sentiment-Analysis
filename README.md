@@ -2,7 +2,7 @@
 
 ![App Screenshot](https://via.placeholder.com/800x400?text=Insert+Your+App+Screenshot+Here)
 
-**[Live Demo: Click Here to Try the App!](#)** *(Update this link once deployed)*
+**[Live Demo: Click Here to Try the App!](#)**
 
 ## 📌 Overview
 **AI Movie Critic** is a premium web application powered by Deep Learning that analyzes movie reviews and determines their emotional tone. Built with a Recurrent Neural Network (RNN) trained on the IMDB movie review dataset, this app provides real-time sentiment classification (Positive/Negative) along with an AI confidence score.
@@ -28,11 +28,3 @@ The user interface is designed with a modern, clean, and responsive aesthetic us
 
 ---
 
-## 🚀 Installation & Setup
-
-Follow these steps to run the project on your local machine.
-
-### 1. Clone the repository
-```bash
-git clone [https://github.com/yourusername/ai-movie-critic.git](https://github.com/yourusername/ai-movie-critic.git)
-cd ai-movie-critic

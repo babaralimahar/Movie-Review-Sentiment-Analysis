@@ -153,7 +153,7 @@ with st.sidebar:
 # ==========================================
 # 5. APP UI & LAYOUT 
 # ==========================================
-st.title('🌌 DeepSent: Neural Sentiment Analysis')
+st.title('🌌 DeepSent AI: Movie Sentiment Analysis')
 st.markdown("### *Uncovering the human emotion behind the text.*")
 st.markdown("Powered by a custom Recurrent Neural Network. Enter a movie review below to process its semantic sequence.")
 st.write("") # Spacer
@@ -164,7 +164,7 @@ user_input = st.text_area(
     placeholder="e.g., 'The cinematography was absolutely breathtaking, but the plot fell flat...'",
 )
 
-if st.button('Initialize Analysis ⚡'):
+if st.button('Initialize Analysis⚡'):
     if not user_input.strip():
         st.warning('⚠️ Awaiting text input for analysis.', icon="🚨")
     else:
@@ -198,3 +198,4 @@ if st.button('Initialize Analysis ⚡'):
             )
 
 st.markdown("<div class='footer'> Developed By: <b>Babar Ali</b></div>", unsafe_allow_html=True)
+

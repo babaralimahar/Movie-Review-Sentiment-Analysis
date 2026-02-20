@@ -38,7 +38,7 @@ The frontend is designed with **Streamlit**
 
 ---
 
-##  Under the Hood (How it Works)
+## How it Works
 1. **Input:** The user inputs a raw string of text.
 2. **Preprocessing:** The text is stripped of punctuation, converted to lowercase, and split into individual words.
 3. **Tokenization:** Words are mapped to their corresponding integer IDs based on the IMDB vocabulary dictionary. Unknown or rare words are safely assigned an `<UNK>` tag (index `2`).
